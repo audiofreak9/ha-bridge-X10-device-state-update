@@ -15,4 +15,4 @@ for device in requests.get('http://localhost/api/devices').json():
         print "Device ID %s set to %s at dim level %s (%s)" % (device['id'], state, dimlevel, device['name'])
         r = requests.put(url, json={"on":state, "bri":dimlevel})
     else:
-        print "Device ID %s not a HEYU device (%s)" % (device['id'], device['name'])
+        print "Device ID %s not an X10 device (%s)" % (device['id'], device['name'])
