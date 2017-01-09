@@ -1,11 +1,13 @@
 #!/usr/bin/env python
-import urllib2, subprocess, requests
+import urllib2, subprocess, requests, time
+timestamp = time.strftime("Time: %H:%M, Date: %Y%m%d, ")
+print timestamp
 for device in requests.get('http://localhost/api/devices').json():
     if device['offUrl'].find('heyu') != -1:
         url = "http://localhost/api/c/lights/%s/bridgeupdatestate" % device['id']
-        heyu = device['offUrl'].replace("foff", "dimlevel").replace("off","dimlevel")
-        if heyu.find('dimlevel') != -1:
-            proc = subprocess.Popen([heyu], stdout=subprocess.PIPE, shell=True)
+        chtxt = device['offUrl'].replace("foff", "dimlevel").replace("off","dimlevel")
+        if chtxt.find('dimlevel') != -1:
+            proc = subprocess.Popen([chtxt], stdout=subprocess.PIPE, shell=True)
             (dimlevel, err) = proc.communicate()
             dimlevel = int(dimlevel)
             if dimlevel > 0:
