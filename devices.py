@@ -3,12 +3,12 @@ import subprocess, requests, time, re, json
 heyuRegex = re.compile(r'[a-zA-Z]{1}\d{1,2}')
 (alllevel, err) = subprocess.Popen(["/usr/local/bin/heyu show dim"], stdout=subprocess.PIPE, shell=True).communicate()
 Mlevelarray = alllevel.split('\n')[15].strip().split()
-json_string = requests.get('http://192.168.1.9/api/devices', auth=('murn', '23FordFusion!')).json()
+json_string = requests.get('http://[YOUR_RPI_IP]/api/devices', auth=('murn', '23FordFusion!')).json()
 for device in json_string:
         if device["onUrl"].find("heyu") != -1 :
                 HU = heyuRegex.search(device["onUrl"])
                 if HU:
-                        url = "http://192.168.1.9/api/c/lights/%s/bridgeupdatestate" % device['id']
+                        url = "http://[YOUR_RPI_IP]/api/c/lights/%s/bridgeupdatestate" % device['id']
                         dimlevel = int(Mlevelarray[int(HU.group().replace("M", ""))])
                         if dimlevel > 0:
                                 dimlevel = ((dimlevel*255)/100)
