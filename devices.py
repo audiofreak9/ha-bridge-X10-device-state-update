@@ -9,7 +9,7 @@ for device in json_string:
                 HU = heyuRegex.search(device["onUrl"])
                 if HU:
                         url = "http://[YOUR_RPI_IP]/api/c/lights/%s/bridgeupdatestate" % device['id']
-                        dimlevel = int(Mlevelarray[int(HU.group().replace("M", ""))])
+                        dimlevel = int(Mlevelarray[int(HU.group().replace("[YOUR_HOUSECODE]", ""))])
                         if dimlevel > 0:
                                 dimlevel = ((dimlevel*255)/100)
                                 state = "true"
