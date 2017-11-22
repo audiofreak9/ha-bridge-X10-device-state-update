@@ -6,3 +6,7 @@ The Python script queries the ha-bridge for configured devices, and determines i
 * Complete my <a href="http://coreyswrite.com/tips-tricks/amazon-echo-x10-home-control-updated/">Amazon Echo X10 Home Control tutorial</a>
 * Set the directive “START_ENGINE AUTO” in the <a href="https://github.com/audiofreak9/HEYU-config-file-example/blob/master/x10config#L241">HEYU configuration file</a>
 
+<h3>Usage</h3>
+* Copy the devices.py file to your "habridge" directory on the Raspberry Pi.
+* Replace the two instances of [YOUR_RPI_IP] in the code with your Rasperry Pi's IP.
+* Replace the [YOUR_HOUSECODE] in the code with your X10 Housecode, for me it would be M.
