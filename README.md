@@ -17,8 +17,6 @@ The Python script queries the ha-bridge for configured devices, and determines i
 
 * Replace the two instances of [YOUR_RPI_IP] in the code with your Rasperry Pi's IP.
 
-* Replace the [YOUR_HOUSECODE] in the code with your X10 Housecode, for me it would be M.
-
 * Replace the [YOUR_HABRIDGE_USERNAME] and [YOUR_HABRIDGE_PASSWORD] in the code with your HA Bridge username and password.
 
 <h3>Usage</h3>
