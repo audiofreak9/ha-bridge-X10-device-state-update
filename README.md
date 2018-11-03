@@ -1,5 +1,5 @@
-# ha-bridge-X10-device-state-update
-The Python script queries the ha-bridge for configured devices, and determines if they are X10 devices. It then gets the state of each X10 device from HEYU‘s state engine and updates the ha-bridge with that on/off and dim state as applicable.
+# ha-bridge-device-state-update
+The Python script queries the ha-bridge for configured devices, and determines if they are mqtt or X10 devices. It then gets the state of each X10 device from HEYU‘s state engine and stored mqtt message states from the broker and updates the ha-bridge with that on/off and dim state as applicable.
 
 <h3>Prerequisite components</h3>
 
@@ -15,9 +15,9 @@ The Python script queries the ha-bridge for configured devices, and determines i
 
 * Make the script executable: `$ sudo chmod +x devices.py`
 
-* Replace the two instances of [YOUR_RPI_IP] in the code with your Rasperry Pi's IP.
+* Replace the [YOUR_IP] variable in the code with your Rasperry Pi's IP.
 
-* Replace the [YOUR_HABRIDGE_USERNAME] and [YOUR_HABRIDGE_PASSWORD] in the code with your HA Bridge username and password.
+* Replace the [YOUR_USER] and [YOUR_PASS] in the code with your HA Bridge username and password.  NOTE: My HA-Bridge and mqtt broker use the same username and password, so your milage may vary.
 
 <h3>Usage</h3>
 
