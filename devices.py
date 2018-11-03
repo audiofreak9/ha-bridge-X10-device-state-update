@@ -49,7 +49,7 @@ json_string = requests.get(ha_url, auth=(uname, upass)).json()
 
 #Make mqtt connection
 mqtt.Client.connected_flag=False #create flag in class
-broker="192.168.1.25"
+broker = ha_ip
 client = mqtt.Client('mqtt')             #create new instance 
 client.on_connect=on_connect  #bind call back function
 client.loop_start()
