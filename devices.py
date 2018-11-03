@@ -3,9 +3,9 @@ import subprocess, requests, time, re, json
 import paho.mqtt.client as mqtt  #import the client
 
 dimlevel = 0
-ha_ip = "YOUR_IP"
-uname = "YOUR_USER"
-upass = "YOUR_PASS"
+ha_ip = "[YOUR_IP]"
+uname = "[YOUR_USER]"
+upass = "[YOUR_PASS]"
 
 def on_connect(client, userdata, flags, rc):
     if rc==0:
