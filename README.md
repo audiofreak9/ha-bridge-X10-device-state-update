@@ -17,7 +17,7 @@ The Python script queries the ha-bridge for configured devices, and determines i
 
 * Replace the [YOUR_IP] variable in the code with your Rasperry Pi's IP.
 
-* Replace the [YOUR_USER] and [YOUR_PASS] in the code with your HA Bridge username and password.  NOTE: My HA-Bridge and mqtt broker use the same username and password, so your milage may vary.
+* Replace the [YOUR_USER] and [YOUR_PASS] in the code with your HA Bridge username and password.  NOTE: My HA-Bridge and mqtt broker use the same IP, username and password, so your milage may vary.
 
 <h3>Usage</h3>
 
