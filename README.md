@@ -9,15 +9,17 @@ The Python script queries the ha-bridge for configured devices, and determines i
 
 * Set the directive “START_ENGINE AUTO” in the <a href="https://github.com/audiofreak9/HEYU-config-file-example/blob/master/x10config#L241">HEYU configuration file</a>
 
+* Mosquitto broker (or the like) installed on your RPi
+
 <h3>Install</h3>
 
 * Copy the devices.py file to your "habridge" directory on the Raspberry Pi.
 
 * Make the script executable: `$ sudo chmod +x devices.py`
 
-* Replace the [YOUR_IP] variable in the code with your Rasperry Pi's IP.
+* Replace the [IP] variables in the code with your IPs.
 
-* Replace the [YOUR_USER] and [YOUR_PASS] in the code with your HA Bridge username and password.  NOTE: My HA-Bridge and mqtt broker use the same IP, username and password, so your milage may vary.
+* Replace the [USER] and [PASS] variables in the code with your usernames and passwords.
 
 <h3>Usage</h3>
 
