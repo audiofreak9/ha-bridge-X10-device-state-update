@@ -9,7 +9,7 @@ The Python script queries the ha-bridge for configured devices, and determines i
 
 * Set the directive “START_ENGINE AUTO” in the <a href="https://github.com/audiofreak9/HEYU-config-file-example/blob/master/x10config#L241">HEYU configuration file</a>
 
-* Mosquitto broker (or the like) installed on your RPi
+* Mosquitto broker (or the like) installed on your RPi, NOTE: Remember to set 'retain' to 'true' for your mqtt devices on HA-Bridge so the broker retains states
 
 <h3>Install</h3>
 
