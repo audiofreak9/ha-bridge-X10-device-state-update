@@ -64,6 +64,7 @@ def is_mqtt(topic):
         client.subscribe(topic,1)
         client.on_message = on_message
         time.sleep(0.8)
+        client.unsubscribe(topic)
         client.loop_stop()    #Stop loop 
 
 if havemqtt == True or haveX10 == True :
