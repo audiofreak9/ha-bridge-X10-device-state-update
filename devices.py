@@ -76,13 +76,12 @@ if havemqtt == True or haveX10 == True :
             print " mqtt: *********************************************************"
             #Make mqtt connection
             mqtt.Client.connected_flag=False #create flag in class
-            broker = mqtt_broker_ip
             client = mqtt.Client('mqtt')             #create new instance 
             client.on_connect=on_connect  #bind call back function
             client.loop_start()
-            print " mqtt: Connecting to broker %s" % broker
+            print " mqtt: Connecting to broker %s" % mqtt_broker_ip
             client.username_pw_set(mqtt_uname, mqtt_upass)
-            client.connect(broker)      #connect to broker
+            client.connect(mqtt_broker_ip)      #connect to broker
             while not client.connected_flag: #wait in loop
                     print " mqtt: Connecting..."
                     time.sleep(1)
@@ -99,7 +98,7 @@ if havemqtt == True or haveX10 == True :
                                     print " mqtt: HA-Bridge Device ID %s is an mqtt group not a topic (%s)" % (device['id'], device['name'])
                                     print " - Next"
             client.disconnect() # disconnect
-            print " mqtt: Disconnected from mqtt broker %s" % broker
+            print " mqtt: Disconnected from mqtt broker %s" % mqtt_broker_ip
             print " mqtt: Device update successful"
 
     if haveX10 == True :
