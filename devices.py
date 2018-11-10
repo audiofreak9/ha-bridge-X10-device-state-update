@@ -21,6 +21,7 @@ mqtt_broker_ip = "[YOUR_mqtt_IP]"
 mqtt_uname = "[YOUR_mqtt_USER]"
 mqtt_upass = "[YOUR_mqtt_PASS]"
 havemqtt = False #Set to True if you have mqtt devices
+mqtt100_0 = True #set to True if you have MK-Smarthouse blinds and 100 and 0 are both closed based on servo orientation
 
 #****************
 #* UPDATE ABOVE *
@@ -53,7 +54,7 @@ def dev_update(dimlevel):
 #mqtt message (calls dev_update)
 def on_message(client, userdata, message):
         dimlevel = int(message.payload.decode("utf-8"))
-        if dimlevel == 100:
+        if dimlevel == 100 and mqtt100_0 == True:
                 dimlevel = 0
         dev_update(dimlevel)
 
