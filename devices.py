@@ -57,6 +57,8 @@ def dev_update(dimlevel):
 def on_message(client, userdata, message):
         topic = message.topic
         dimlevel = int(message.payload.decode("utf-8"))
+        if dimlevel == 100 and mqtt100_0 == True:
+                dimlevel = 0
         mqttTopics[topic] = dimlevel
 
 #is_mqtt (calls on_message)
